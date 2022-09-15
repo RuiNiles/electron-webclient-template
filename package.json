@@ -1,28 +1,27 @@
 {
-  "name": "prospect-gmail",
-  "productName": "Prospect Gmail",
+  "name": "change_me-client",
+  "productName": "CHANGE_ME-client",
   "version": "0.6.0-beta",
   "main": "src/main.js",
-  "description": "Unofficial desktop client for Gmail",
-  "homepage": "https://github.com/julian-alarcon/prospect-mail",
+  "description": "Unofficial desktop client for CHANGE_ME",
+  "homepage": "https://github.com/RuiNiles/electron-webclient-template",
   "keywords": [
     "Electron",
-    "Gmail",
-    "Microsoft",
-    "Gmail Desktop",
-    "Prospect"
+    "Desktop",
+    "Prospect",
+    "CHANGE_ME"
   ],
   "repository": {
     "type": "git",
-    "url": "git+ssh://github.com/julian-alarcon/prospect-mail"
+    "url": "git+ssh://github.com/RuiNiles/electron-webclient-template"
   },
   "bugs": {
-    "url": "https://github.com/julian-alarcon/prospect-mail/issues"
+    "url": "https://github.com/RuiNiles/electron-webclient-template/issues"
   },
   "author": {
-    "name": "Julian Alarcon",
-    "email": "alarconj@gmail.com",
-    "url": "https://github.com/julian-alarcon/"
+    "name": "Rui Niles",
+    "email": "ruiniles141@gmail.com",
+    "url": "https://github.com/RuiNiles/"
   },
   "license": "MIT",
   "engines": {
@@ -53,17 +52,17 @@
     "electron-builder": "^22.14.5"
   },
   "build": {
-    "appId": "io.github.julian-alarcon.prospect-mail",
+    "appId": "io.github.RuiNiles.electron-webclient-template",
     "linux": {
       "category": "Mail;Network;Office",
       "packageCategory": "net",
-      "executableName": "prospect-mail",
-      "synopsis": "Prospect Mail",
+      "executableName": "CHANGE_ME",
+      "synopsis": "CHANGE_ME",
       "icon": "build/icons/512x512.png",
       "desktop": {
-        "Name": "Prospect Mail",
-        "Comment": "Unofficial desktop client for Gmail",
-        "StartupWMClass": "prospect-mail"
+        "Name": "CHANGE_ME",
+        "Comment": "Unofficial desktop client for CHANGE_ME",
+        "StartupWMClass": "CHANGE_ME"
       },
       "target": [
         "rpm",
@@ -79,7 +78,7 @@
       }
     },
     "snap": {
-      "summary": "Prospect Mail",
+      "summary": "CHANGE_ME",
       "confinement": "strict",
       "grade": "stable",
       "buildPackages": [],
