@@ -47,7 +47,7 @@ class MailWindowController {
 
             show: false,
             title: 'Prospect Mail',
-            icon: path.join(__dirname, '../../assets/gmail_linux_black.png'),
+            icon: path.join(__dirname, '../../assets/icon_linux_black.png'),
             webPreferences: {
                 spellcheck: true,
                 nativeWindowOpen: true,
@@ -188,7 +188,7 @@ class MailWindowController {
                             {
                                 var notification = new Notification(unread.length + " New Messages", {
                                     body: body,
-                                    icon: "assets/gmail_linux_black.png"
+                                    icon: "assets/icon_linux_black.png"
                                 });
                                 notification.onclick = () => {
                                     require('electron').ipcRenderer.send('show');

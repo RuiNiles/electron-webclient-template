@@ -5,7 +5,7 @@ const path = require('path')
 const fs = require('fs')
 const crypto = require('crypto')
 const { default: openAboutWindow } = require("about-window");
-const about_iconPath = path.join(__dirname, '../../misc/prospect-logo.svg');
+const about_iconPath = path.join(__dirname, '../../misc/logo.svg');
 const packageJson = require("../../package.json");
 
 const macOS = process.platform === 'darwin' ? true : false
@@ -72,12 +72,12 @@ class TrayController {
 
         let iconPath
         if (macOS) {
-            iconPath = value ? '../../assets/gmail_macOS_unread.png' : '../../assets/gmail_macOS.png'
+            iconPath = value ? '../../assets/icon_macOS_unread.png' : '../../assets/icon_macOS.png'
             let trayIcon = nativeImage.createFromPath(path.join(__dirname, iconPath))
             trayIcon.setTemplateImage(true)
             return trayIcon
         } else {
-            iconPath = value ? '../../assets/gmail_linux_unread.png' : '../../assets/gmail_linux_black.png'
+            iconPath = value ? '../../assets/icon_linux_unread.png' : '../../assets/icon_linux_black.png'
             return nativeImage.createFromPath(path.join(__dirname, iconPath))
         }
     }
