@@ -1,94 +1,10 @@
-# Prospect Gmail client
+# Electron Webclient Template
 
 <img src="build/icons/128x128.png" alt="logo" height="80" align="center" />
 
-[![builds](https://github.com/julian-alarcon/prospect-mail/actions/workflows/release.yml/badge.svg)](https://github.com/julian-alarcon/prospect-mail/actions)
-[![releases](https://badgen.net/github/release/julian-alarcon/prospect-mail/)](https://github.com/julian-alarcon/prospect-mail/releases/latest)
+The electron desktop webclient template(Based on [Prospect Mail](https://github.com/julian-alarcon/prospect-mail))
 
-The Gmail desktop client (Forked from Prospect Mail)
-
-Available for Linux , Windows and macOS.
-
-## Download
-
-The application can be downloaded from [here](https://github.com/julian-alarcon/prospect-mail/releases).
-
-Select the appropriated file depending on your OS:
-
-* Windows: `.exe` file or `.msi` file
-* macOS: `.dmg` file
-* Linux: Multiple artifacts are available, please choose your needed one (deb,
-rpm, AppImage, snap, pacman) depending on your Linux Distribution.
-
-## Installation
-
-### Windows
-
-Just double click and follow the Installer steps.
-
-### macOS
-
-Double click the dmg file and drag the blue Prospect Mail icon to the App folder
-
-### Linux
-
-Snap builds are available in the Snap Store.
-
-[![Get it from the Snap Store](https://snapcraft.io/static/images/badges/en/snap-store-black.svg)](https://snapcraft.io/prospect-mail)
-
-Or use `sudo snap install prospect-mail` from the terminal.
-
-Arch Linux has a community published artifact available in
-[AUR here](https://aur.archlinux.org/packages/prospect-mail-bin/).
-
-For other distributions please follow your specific steps.
-
-## Screenshots
-
-![screenshot-linux](misc/prospect-mail.png)
-
-![screenshot-calendar-view](misc/calendar-view.png)
-
-## Needed configuration in your Outlook Web configuration
-
-> It's recommended to enable the new design to be able to use this client
-
-## Features
-
-* Receive your Outlook Microsoft 365 online from the desktop app
-* Close to minimize
-* Start as minimized (you can use the Option in the Tray icon menu or start app with `prospect-mail --minimized`)
-* Dock tray support
-* System notification
-* Connect to standard or custom outlook url
-
-## Settings
-
-* Via tray menu settings.json can be opened and edited. After every save you
-need to click in "Reload settings" to apply changes.
-
-```json
-{
- "urlMainWindow":"https://customurl.example/"
- ,"urlsInternal":["customurl.example"]
- ,"urlsExternal":["externalurls.example"]
- ,"showWindowFrame":true
-}
-```
-
-As an example, this configuration will let you use Prospect with personal
-Outlook.com account:
-
-> Please notice that Prospect Mail is only tested in Work/Educational accounts
-and no issues will be reviewed for personal accounts.
-
-```json
-{
-    "urlMainWindow":"https://outlook.live.com/mail",
-    "urlsInternal":["outlook.com", "live.com"],
-    "urlsExternal":["outlook.com", "live.com"]
-}
-```
+Available for Linux, Windows and macOS.
 
 ### Architecture components
 
@@ -98,8 +14,7 @@ The main software architecture components and their versions are this:
 * [yarn](https://yarnpkg.com/) version: 1.22.x or newer
 * [electron](http://electronjs.org/) version: 16.0.x
 * [electron-builder](https://www.electron.build/) version: 22.14.x
-* [electron-settings](https://github.com/nathanbuchar/electron-settings)
-version: 4.0.2
+* [electron-settings](https://github.com/nathanbuchar/electron-settings) version: 4.0.2
 
 ## Build
 
@@ -107,8 +22,8 @@ Clone the repository and run in development mode. (You need to have
 [git](https://git-scm.com/) , node and yarn) installed)
 
 ```bash
-git clone https://github.com/julian-alarcon/prospect-mail.git
-cd prospect-mail
+git clone https://github.com/RuiNiles/electron-webclient-template.git
+cd electron-webclient-template
 yarn
 yarn start
 ```
