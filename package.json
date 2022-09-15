@@ -1,0 +1,135 @@
+{
+  "name": "prospect-gmail",
+  "productName": "Prospect Gmail",
+  "version": "0.6.0-beta",
+  "main": "src/main.js",
+  "description": "Unofficial desktop client for Gmail",
+  "homepage": "https://github.com/julian-alarcon/prospect-mail",
+  "keywords": [
+    "Electron",
+    "Gmail",
+    "Microsoft",
+    "Gmail Desktop",
+    "Prospect"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://github.com/julian-alarcon/prospect-mail"
+  },
+  "bugs": {
+    "url": "https://github.com/julian-alarcon/prospect-mail/issues"
+  },
+  "author": {
+    "name": "Julian Alarcon",
+    "email": "alarconj@gmail.com",
+    "url": "https://github.com/julian-alarcon/"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": "^16.13.0",
+    "yarn": "^1.22.15"
+  },
+  "scripts": {
+    "start": "electron .",
+    "start-minimized": "electron . --minimized",
+    "pack": "electron-builder --dir",
+    "dist:linux": "electron-builder --linux",
+    "dist:linux:appimage": "electron-builder --linux AppImage",
+    "dist:linux:snap": "electron-builder --linux snap",
+    "dist:linux:pacman": "electron-builder --linux pacman",
+    "dist:mac": "electron-builder --mac",
+    "dist:win": "electron-builder --win",
+    "postinstall": "electron-builder install-app-deps",
+    "publish": "build -p always",
+    "release": "electron-builder"
+  },
+  "dependencies": {
+    "about-window": "^1.15.2",
+    "electron-debug": "^3.2.0",
+    "electron-settings": "^4.0.2"
+  },
+  "devDependencies": {
+    "electron": "^16.0.2",
+    "electron-builder": "^22.14.5"
+  },
+  "build": {
+    "appId": "io.github.julian-alarcon.prospect-mail",
+    "linux": {
+      "category": "Mail;Network;Office",
+      "packageCategory": "net",
+      "executableName": "prospect-mail",
+      "synopsis": "Prospect Mail",
+      "icon": "build/icons/512x512.png",
+      "desktop": {
+        "Name": "Prospect Mail",
+        "Comment": "Unofficial desktop client for Gmail",
+        "StartupWMClass": "prospect-mail"
+      },
+      "target": [
+        "rpm",
+        "deb",
+        "tar.gz",
+        "AppImage",
+        "pacman",
+        "snap"
+      ],
+      "publish": {
+        "provider": "github",
+        "releaseType": "draft"
+      }
+    },
+    "snap": {
+      "summary": "Prospect Mail",
+      "confinement": "strict",
+      "grade": "stable",
+      "buildPackages": [],
+      "stagePackages": [
+        "default"
+      ],
+      "environment": {
+        "DISABLE_WAYLAND": 1
+      },
+      "plugs": [
+        "default",
+        "screen-inhibit-control",
+        "wayland",
+        "upower-observe",
+        "removable-media",
+        "mount-observe"
+      ],
+      "publish": [
+        "github",
+        "snapStore"
+      ]
+    },
+    "mac": {
+      "category": "public.app-category.productivity",
+      "target": [
+        "dmg"
+      ],
+      "type": "distribution",
+      "icon": "build/icons/512x512.png",
+      "publish": {
+        "provider": "github",
+        "releaseType": "draft"
+      }
+    },
+    "win": {
+      "target": [
+        "nsis",
+        "msi"
+      ],
+      "icon": "build/icons/512x512.png",
+      "publish": {
+        "provider": "github",
+        "releaseType": "draft"
+      }
+    },
+    "nsis": {
+      "differentialPackage": false
+    },
+    "dmg": {
+      "writeUpdateInfo": false
+    }
+  }
+}
