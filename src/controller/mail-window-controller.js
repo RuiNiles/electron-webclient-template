@@ -3,9 +3,9 @@ const settings = require('electron-settings')
 const CssInjector = require('../js/css-injector')
 const path = require('path')
 
-let gmailUrl
+let siteUrl
 let deeplinkUrls
-let gmailUrls
+let siteUrls
 let showWindowFrame
 let $this
 
@@ -24,13 +24,13 @@ class MailWindowController {
         // Get configurations.
         showWindowFrame = settings.getSync('showWindowFrame') === undefined || settings.getSync('showWindowFrame')===true
 
-        gmailUrl = settings.getSync('urlMainWindow') || 'https://mail.google.com/mail/u/0/#inbox'
-        deeplinkUrls = settings.getSync('urlsInternal') || ['https://mail.google.com/mail/deeplink']
-        gmailUrls = settings.getSync('urlsExternal') || ['mail.google.com']
+        siteUrl = settings.getSync('urlMainWindow') || 'https://CHANGE_ME/'
+        deeplinkUrls = settings.getSync('urlsInternal') || ['https://CHANGE_ME/deeplink']
+        siteUrls = settings.getSync('urlsExternal') || ['CHANGE_ME']
         console.log('Loaded settings', {
-            gmailUrl: gmailUrl
+            siteUrl: siteUrl
             , deeplinkUrls: deeplinkUrls
-            , gmailUrls: gmailUrls
+            , siteUrls: siteUrls
         })
     }
     init() {
@@ -58,7 +58,7 @@ class MailWindowController {
         })
 
         // and load the index.html of the app.
-        this.win.loadURL(gmailUrl)
+        this.win.loadURL(siteUrl)
 
         // Show window handler
         ipcMain.on('show', (event) => {
@@ -248,7 +248,7 @@ class MailWindowController {
             console.log('Is deeplink')
             options.webPreferences.affinity = 'main-window';
         }
-        else if (new RegExp(gmailUrls.join('|')).test(url)) {
+        else if (new RegExp(siteUrls.join('|')).test(url)) {
             // Open calendar, contacts and tasks in the same window
             e.preventDefault()
             this.loadURL(url)
