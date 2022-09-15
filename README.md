@@ -56,6 +56,18 @@ files using [AppImage process](https://docs.appimage.org/user-guide/faq.html#que
 using .deb ```sudo dpkg -i prospect-mail_x.y.z_arch.deb``` or using the snap
 file ```sudo snap install prospect-mail_x.y.z_arch.snap --dangerous```.
 
+## Build executables
+
+This can be done using the [electron-packager](https://github.com/electron/electron-packager) tool.
+
+Install electron-packager
+
+```npm install --save-dev electron-packager```
+
+Package application (run in project root):
+
+```npx electron-packager .```
+
 ## Release to Public
 
 With the specific permissions on Github, to create a new release follow the
