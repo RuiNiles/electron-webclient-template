@@ -46,7 +46,7 @@ class MailWindowController {
             autoHideMenuBar: true,
 
             show: false,
-            title: 'Prospect Mail',
+            title: 'CHANGE_ME client',
             icon: path.join(__dirname, '../../assets/icon_linux_black.png'),
             webPreferences: {
                 spellcheck: true,
